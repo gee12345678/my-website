@@ -36,19 +36,6 @@
     .dashboard-preview .image:hover {
       transform: scale(1.02);
     }
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    .col-6 {
-      flex: 1 1 48%;
-    }
-    @media (max-width: 768px) {
-      .col-6 {
-        flex: 1 1 100%;
-      }
-    }
   </style>
 </head>
 <body class="is-preload">
@@ -83,45 +70,18 @@
       </div>
     </section>
 
-    <!-- Tableau Previews -->
+    <!-- Tableau Preview -->
     <section id="one" class="inner">
-      <h2>Dashboard Previews</h2>
-      <div class="row dashboard-preview">
-        <div class="col-6">
-          <a href="#population"><span class="image"><img src="images/world-population-thumb.jpg" alt="World Population Dashboard" /></span></a>
-          <h3><a href="#population">World Population Dashboard</a></h3>
-          <p>Explore population data across decades and continents with insights on growth rate and density.</p>
-        </div>
-        <div class="col-6">
-          <a href="#netflix"><span class="image"><img src="images/netflix-dashboard-thumb.jpg" alt="Netflix Dashboard" /></span></a>
-          <h3><a href="#netflix">Netflix Insights Dashboard</a></h3>
-          <p>Click on a title to discover genre, rating, description, release year, and more.</p>
-        </div>
+      <h2>Dashboard Preview</h2>
+      <div class="dashboard-preview">
+        <a href="#netflix"><span class="image"><img src="images/netflix-dashboard-thumb.jpg" alt="Netflix Dashboard" /></span></a>
+        <h3><a href="#netflix">Netflix Insights Dashboard</a></h3>
+        <p>Click on a title to discover genre, rating, description, release year, and more.</p>
       </div>
     </section>
 
-    <!-- Dashboards Section -->
+    <!-- Dashboard Embed -->
     <div id="main">
-
-      <!-- Project 1 -->
-      <section id="population" class="inner">
-        <h2>🌍 World Population Analysis Dashboard</h2>
-        <p>
-          This dashboard visualizes the world's population by country, continent, growth rate, and density across years.
-        </p>
-        <div class="tableau-container">
-          <iframe src="https://public.tableau.com/views/WorldPopulationAnalysis_17156789835340/WorldPopulation?:language=en-US&:display_count=n&:origin=viz_share_link" allowfullscreen></iframe>
-        </div>
-        <p style="margin-top: 1rem;">
-          <a href="https://public.tableau.com/views/WorldPopulationAnalysis_17156789835340/WorldPopulation?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">
-            View on Tableau Public ↗
-          </a>
-        </p>
-      </section>
-
-      <hr />
-
-      <!-- Project 2 -->
       <section id="netflix" class="inner">
         <h2>🎬 Netflix Title Insights Dashboard</h2>
         <p>
@@ -136,7 +96,6 @@
           </a>
         </p>
       </section>
-
     </div>
 
   </div>
