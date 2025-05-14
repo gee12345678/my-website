@@ -24,18 +24,6 @@
       height: 100%;
       border: none;
     }
-    .dashboard-preview {
-      margin: 3rem 0;
-    }
-    .dashboard-preview .image {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
-    .dashboard-preview .image:hover {
-      transform: scale(1.02);
-    }
   </style>
 </head>
 <body class="is-preload">
@@ -61,57 +49,32 @@
     <!-- Banner -->
     <section id="banner" class="style2">
       <div class="inner">
-        <header class="major">
-          <h1>Tableau Projects</h1>
-        </header>
+        <header class="major"><h1>Tableau Projects</h1></header>
         <div class="content">
-          <p>Interactive dashboards created using Tableau to tell data stories visually.</p>
+          <p>Visual dashboards that bring data to life.</p>
         </div>
       </div>
     </section>
 
-    <!-- Dashboard Previews -->
-    <section id="one" class="inner">
-      <h2>Dashboard Previews</h2>
-
-      <!-- My First Dashboard -->
-      <div class="dashboard-preview">
-        <a href="#first"><span class="image"><img src="images/my-first-dashboard-thumb.jpg" alt="My First Dashboard" /></span></a>
-        <h3><a href="#first">📊 My First Dashboard</a></h3>
-        <p>This was my first Tableau dashboard where I explored basic data visualizations and interactive charts.</p>
-      </div>
-
-      <!-- Netflix Dashboard -->
-      <div class="dashboard-preview">
-        <a href="#netflix"><span class="image"><img src="images/netflix-dashboard-thumb.jpg" alt="Netflix Dashboard" /></span></a>
-        <h3><a href="#netflix">🎬 Netflix Insights</a></h3>
-        <p>This dashboard lets users click on a title and explore its genre, release year, rating, and description — with bar and pie chart visuals.</p>
-      </div>
-    </section>
-
-    <!-- Dashboards -->
+    <!-- Main Section -->
     <div id="main">
-
-      <!-- My First Dashboard -->
-      <section id="first" class="inner">
+      <section id="one" class="inner">
+        <!-- My First Dashboard -->
         <h2>📊 My First Dashboard</h2>
-        <p>This dashboard explores a beginner-level dataset with interactive filters and charts.</p>
+        <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
         <div class="tableau-container">
           <iframe src="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" allowfullscreen></iframe>
         </div>
         <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">View on Tableau Public ↗</a></p>
-      </section>
 
-      <!-- Netflix Dashboard -->
-      <section id="netflix" class="inner">
-        <h2>🎬 Netflix Insights</h2>
-        <p>Explore Netflix shows and movies by genre, rating, release year, and more. The dashboard also lets you click a title to view more details.</p>
+        <!-- Netflix Dashboard -->
+        <h2 style="margin-top: 3rem;">🎬 Netflix Dashboard</h2>
+        <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
         <div class="tableau-container">
           <iframe src="https://public.tableau.com/views/Netflix_17472326536060/Netflix?:language=en-US&:display_count=n&:origin=viz_share_link" allowfullscreen></iframe>
         </div>
         <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">View on Tableau Public ↗</a></p>
       </section>
-
     </div>
 
   </div>
