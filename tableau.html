@@ -1,19 +1,92 @@
-<section id="one" class="inner">
-  <!-- 🎬 Project 1: Netflix Dashboard -->
-  <h2>Netflix Title Insights Dashboard</h2>
-  <p>This dashboard lets users explore Netflix shows and movies by genre, rating, release year, and more. Click on a title to see details.</p>
-  <div class="tableau-container">
-    <iframe src="https://public.tableau.com/views/Netflix_17472326536060/Netflix?:language=en-US&:display_count=n&:origin=viz_share_link" allowfullscreen></iframe>
-  </div>
-  <p><a href="https://public.tableau.com/app/profile/glenda.makamadze/viz/Netflix_17472326536060/Netflix?publish=yes" target="_blank">Open on Tableau Public ↗</a></p>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Tableau Projects | Glenda Makamadze</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    .tableau-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 65%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .tableau-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    hr {
+      margin: 50px 0;
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
 
-  <hr>
+    <!-- Header -->
+    <header id="header" class="alt style2">
+      <a href="index.html" class="logo"><strong>Glenda Makamadze</strong><span> Portfolio</span></a>
+      <nav><a href="#menu">Menu</a></nav>
+    </header>
 
-  <!-- 🌍 Project 2: World Population Dashboard -->
-  <h2>World Population Dashboard</h2>
-  <p>Explore population growth by country, continent, and decade with KPIs, bar charts, and filters for rich storytelling.</p>
-  <div class="tableau-container">
-    <iframe src="YOUR_SECOND_PROJECT_EMBED_LINK_HERE" allowfullscreen></iframe>
+    <!-- Menu -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="tableau.html">Tableau</a></li>
+        <li><a href="excel.html">Excel</a></li>
+      </ul>
+    </nav>
+
+    <!-- Banner -->
+    <section id="banner" class="style2">
+      <div class="inner">
+        <header class="major">
+          <h1>Tableau Projects</h1>
+        </header>
+        <div class="content">
+          <p>Visual dashboards that bring data to life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div id="main">
+      <section id="one" class="inner">
+
+        <!-- 🎬 Project 1: Netflix Dashboard -->
+        <h2>Netflix Title Insights Dashboard</h2>
+        <p>
+          This dashboard allows users to explore Netflix shows and movies by genre, rating, release year, and more. 
+          Click on a title to reveal full details such as description, release year, and rating. Built with filters, KPIs, and interactive visual storytelling.
+        </p>
+
+        <div class="tableau-container">
+          <iframe src="https://public.tableau.com/views/Netflix_17472326536060/Netflix?:language=en-US&:display_count=n&:origin=viz_share_link" allowfullscreen></iframe>
+        </div>
+
+        <p style="margin-top: 1rem;">
+          <a href="https://public.tableau.com/app/profile/glenda.makamadze/viz/Netflix_17472326536060/Netflix?publish=yes" target="_blank">
+            Open this dashboard on Tableau Public ↗
+          </a>
+        </p>
+
+        <!-- 🔁 Add more projects here if needed -->
+        <!-- Just duplicate the above block -->
+
+      </section>
+    </div>
   </div>
-  <p><a href="YOUR_SECOND_PUBLIC_LINK_HERE" target="_blank">Open on Tableau Public ↗</a></p>
-</section>
+</body>
+</html>
