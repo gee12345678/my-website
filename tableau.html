@@ -10,24 +10,25 @@
   <style>
     /* Responsive menu and dropdown fixes */
 
-    /* Hide menu on small screens */
-    #menu {
-      display: none;
-      position: fixed;
-      background: #7b6fc5;
-      top: 60px;
-      right: 0;
-      width: 200px;
-      height: calc(100% - 60px);
-      padding-top: 2rem;
-      z-index: 10000;
-      overflow-y: auto;
-      transition: all 0.3s ease;
-    }
+    /* Default menu hidden on small screens */
+    @media screen and (max-width: 768px) {
+      #menu {
+        display: none;
+        position: fixed;
+        background: #7b6fc5;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        height: calc(100% - 60px);
+        padding-top: 2rem;
+        z-index: 10000;
+        overflow-y: auto;
+        transition: all 0.3s ease;
+      }
 
-    /* Show menu when active */
-    #menu.active {
-      display: block;
+      #menu.active {
+        display: block;
+      }
     }
 
     #menu ul {
@@ -220,19 +221,14 @@
       menu.classList.toggle('active');
     });
 
-    // For mobile dropdown toggle on submenu
-    const submenuParents = document.querySelectorAll('#menu ul li > a + ul');
-    // submenuParents will be the <ul> inside li
-
-    // Actually we want to add click toggles on parent links that have submenu:
+    // Toggle submenus on mobile
     const parentsWithSubmenu = document.querySelectorAll('#menu ul li > a');
 
     parentsWithSubmenu.forEach(link => {
-      // Check if link has next sibling ul (submenu)
       const nextEl = link.nextElementSibling;
       if (nextEl && nextEl.tagName === 'UL') {
         link.addEventListener('click', function(e) {
-          if (window.innerWidth < 769) {  // Only toggle on mobile
+          if (window.innerWidth < 769) {
             e.preventDefault();
             const parentLi = link.parentElement;
             parentLi.classList.toggle('open');
@@ -241,13 +237,12 @@
       }
     });
 
-    // Close menu when a link is clicked (optional)
+    // Close menu when a link is clicked
     const menuLinks = menu.querySelectorAll('a');
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth < 769) {
           menu.classList.remove('active');
-          // close all open dropdowns
           document.querySelectorAll('#menu li.open').forEach(li => li.classList.remove('open'));
         }
       });
