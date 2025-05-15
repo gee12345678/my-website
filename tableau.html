@@ -8,12 +8,15 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
+  <!-- Wrapper -->
   <div id="wrapper">
 
     <!-- Header -->
     <header id="header" class="alt style2">
       <a href="index.html" class="logo"><strong>Glenda Makamadze</strong> <span>Portfolio</span></a>
-      <nav><a href="#menu">Menu</a></nav>
+      <nav>
+        <a href="#menu" class="menuToggle">Menu</a>
+      </nav>
     </header>
 
     <!-- Menu -->
@@ -39,7 +42,7 @@
       </div>
     </section>
 
-    <!-- Main Section -->
+    <!-- Main -->
     <div id="main">
       <section id="one" class="inner">
         <header class="major">
@@ -63,6 +66,7 @@
         </ul>
       </section>
     </div>
+
   </div>
 
   <!-- Scripts -->
@@ -71,5 +75,22 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- Add this if the menu toggle still doesn't work -->
+  <script>
+    $(document).ready(function () {
+      $('.menuToggle').click(function (e) {
+        e.preventDefault();
+        $('#menu').toggleClass('visible');
+      });
+    });
+  </script>
+
+  <style>
+    /* Optional: fallback CSS if JS fails */
+    #menu.visible {
+      display: block !important;
+    }
+  </style>
 </body>
 </html>
