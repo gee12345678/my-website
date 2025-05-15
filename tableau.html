@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <style>
-    /* Optional: mobile hamburger enhancements */
+    /* Mobile menu fix */
     #menuToggle {
       display: none;
     }
@@ -65,6 +65,27 @@
         display: block;
       }
     }
+
+    /* 🔧 Add banner background fix */
+    #banner.style2 {
+      background-image: url('images/banner.jpg'); /* 👈 Replace with your actual image path */
+      background-size: cover;
+      background-position: center;
+      padding: 6em 0;
+      color: white;
+      text-align: center;
+    }
+
+    #banner.style2 .inner {
+      background: rgba(0, 0, 0, 0.5); /* optional dark overlay */
+      padding: 2em;
+      border-radius: 1em;
+      display: inline-block;
+    }
+
+    #banner.style2 .major h1 {
+      font-size: 2.5em;
+    }
   </style>
 </head>
 <body class="is-preload">
@@ -89,7 +110,7 @@
       </nav>
     </header>
 
-    <!-- Banner -->
+    <!-- ✅ Fixed Banner -->
     <section id="banner" class="style2">
       <div class="inner">
         <header class="major"><h1>Tableau Projects</h1></header>
@@ -102,12 +123,10 @@
     <!-- Main Section -->
     <div id="main">
       <section id="one" class="inner">
-        <!-- First Dashboard -->
         <h2>📊 My First Dashboard</h2>
         <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
         <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">View on Tableau Public ↗</a></p>
 
-        <!-- Netflix Dashboard -->
         <h2 style="margin-top: 3rem;">🎬 Netflix Dashboard</h2>
         <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
         <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">View on Tableau Public ↗</a></p>
@@ -115,7 +134,7 @@
     </div>
   </div>
 
-  <!-- JavaScript for toggling the menu on mobile -->
+  <!-- JS for menu toggle -->
   <script>
     function toggleMenu() {
       document.getElementById("menu").classList.toggle("active");
