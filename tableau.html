@@ -8,9 +8,9 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* Added responsive menu CSS override for hamburger */
+    /* Responsive menu and dropdown fixes */
 
-    /* Hide menu on small screens initially */
+    /* Hide menu on small screens */
     #menu {
       display: none;
       position: fixed;
@@ -21,6 +21,7 @@
       height: calc(100% - 60px);
       padding-top: 2rem;
       z-index: 10000;
+      overflow-y: auto;
       transition: all 0.3s ease;
     }
 
@@ -35,36 +36,56 @@
       padding: 0;
     }
 
+    #menu ul li {
+      position: relative;
+    }
+
     #menu ul li a {
       display: block;
       color: white;
       text-decoration: none;
       padding: 1rem 2rem;
       font-weight: 600;
+      cursor: pointer;
     }
 
     #menu ul li a:hover {
       background: #5c4ebd;
     }
 
+    /* Dropdown submenu styles */
+    #menu ul li ul {
+      display: none;
+      list-style: none;
+      padding-left: 1rem;
+      background: #6a5ebf;
+    }
+
+    #menu ul li ul li a {
+      padding: 0.75rem 2rem;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    /* Show submenu when parent has .open */
+    #menu ul li.open > ul {
+      display: block;
+    }
+
     /* Hamburger icon styling */
-    header nav a[href="#menu"] {
+    #menuToggle {
       font-weight: 700;
       font-size: 1.1rem;
       letter-spacing: 0.2em;
       color: white;
       cursor: pointer;
+      user-select: none;
+      display: inline-block;
     }
 
-    /* Show hamburger on small screens */
-    @media screen and (max-width: 768px) {
-      nav > a[href="#menu"] {
-        display: inline-block;
-      }
-
-      .links {
-        display: none;
-      }
+    /* Hide old menu hamburger on all screens */
+    header nav a[href="#menu"] {
+      display: none !important;
     }
 
     /* On larger screens, show menu normally */
@@ -76,6 +97,7 @@
         height: auto;
         width: auto;
         padding: 0;
+        overflow: visible;
       }
 
       #menu ul {
@@ -87,6 +109,7 @@
         color: #7b6fc5;
         padding: 0;
         font-weight: 600;
+        cursor: pointer;
       }
 
       #menu ul li a:hover {
@@ -95,7 +118,34 @@
         text-decoration: underline;
       }
 
-      header nav a[href="#menu"] {
+      /* Dropdown on hover for desktop */
+      #menu ul li:hover > ul {
+        display: block;
+        position: absolute;
+        background: #7b6fc5;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+        min-width: 180px;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+
+      #menu ul li ul li {
+        display: block;
+        padding: 0;
+      }
+
+      #menu ul li ul li a {
+        color: white;
+        padding: 0.5rem 1.5rem;
+        white-space: nowrap;
+      }
+
+      #menu ul li ul li a:hover {
+        background: #5c4ebd;
+      }
+
+      #menuToggle {
         display: none;
       }
     }
@@ -107,14 +157,22 @@
     <!-- Header -->
     <header id="header" class="alt style2">
       <a href="index.html" class="logo"><strong>Glenda Makamadze</strong><span> Portfolio</span></a>
-      <nav><a href="#menu" id="menuToggle">Menu &#9776;</a></nav>
+      <nav>
+        <a href="#" id="menuToggle">MENU &#9776;</a>
+      </nav>
     </header>
 
     <!-- Menu -->
     <nav id="menu">
       <ul class="links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="#">About ▼</a>
+          <ul>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="history.html">History</a></li>
+          </ul>
+        </li>
         <li><a href="python.html">Python</a></li>
         <li><a href="tableau.html">Tableau</a></li>
         <li><a href="excel.html">Excel</a></li>
@@ -134,7 +192,6 @@
     <!-- Main Section -->
     <div id="main">
       <section id="one" class="inner">
-        <!-- List of Tableau Projects without visuals -->
 
         <h2>📊 My First Dashboard</h2>
         <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
@@ -155,7 +212,6 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    // Toggle the menu for small screen hamburger
     const menuToggle = document.getElementById('menuToggle');
     const menu = document.getElementById('menu');
 
@@ -164,11 +220,36 @@
       menu.classList.toggle('active');
     });
 
-    // Optional: close menu if link clicked (for better UX on mobile)
+    // For mobile dropdown toggle on submenu
+    const submenuParents = document.querySelectorAll('#menu ul li > a + ul');
+    // submenuParents will be the <ul> inside li
+
+    // Actually we want to add click toggles on parent links that have submenu:
+    const parentsWithSubmenu = document.querySelectorAll('#menu ul li > a');
+
+    parentsWithSubmenu.forEach(link => {
+      // Check if link has next sibling ul (submenu)
+      const nextEl = link.nextElementSibling;
+      if (nextEl && nextEl.tagName === 'UL') {
+        link.addEventListener('click', function(e) {
+          if (window.innerWidth < 769) {  // Only toggle on mobile
+            e.preventDefault();
+            const parentLi = link.parentElement;
+            parentLi.classList.toggle('open');
+          }
+        });
+      }
+    });
+
+    // Close menu when a link is clicked (optional)
     const menuLinks = menu.querySelectorAll('a');
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
-        menu.classList.remove('active');
+        if (window.innerWidth < 769) {
+          menu.classList.remove('active');
+          // close all open dropdowns
+          document.querySelectorAll('#menu li.open').forEach(li => li.classList.remove('open'));
+        }
       });
     });
   </script>
