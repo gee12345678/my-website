@@ -1,3 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tableau Projects | Glenda Makamadze</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f7f7f7;
+    }
+
+    /* Header styling */
+    header {
+      background: #7b6fc5;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      font-weight: normal;
+      font-size: 0.9rem;
+      display: block;
+    }
+
+    /* Hamburger toggle */
+    .menu-toggle {
+      cursor: pointer;
+      display: block;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Menu navigation */
+    nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #7b6fc5;
+      width: 200px;
+      display: none;
+      flex-direction: column;
+    }
+
+    nav a {
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+
+    nav a:hover {
+      background: #6c61b3;
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      nav {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        background: none;
+      }
+
+      nav a {
+        padding: 0 1rem;
+      }
+    }
+
+    /* Banner styling */
+    #banner {
+      background: linear-gradient(to right, #7b6fc5, #9e92db);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    #banner h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    /* Main content */
+    #main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #5c4ebd;
+      margin-top: 2rem;
+    }
+
+    a.project-link {
+      color: #5c4ebd;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.project-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Glenda Makamadze <span>Portfolio</span></div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav id="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="python.html">Python</a>
+      <a href="tableau.html">Tableau</a>
+      <a href="excel.html">Excel</a>
+    </nav>
+  </header>
+
+  <section id="banner">
+    <h1>Tableau Projects</h1>
+    <p>Explore dashboards that reveal insights from data.</p>
+  </section>
+
+  <div id="main">
+    <h2>📊 My First Dashboard</h2>
+    <p>
+      A simple world population dashboard with basic visuals.
+      <br>
+      <a class="project-link" href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">View Project</a>
+    </p>
+
+    <h2>🎬 Netflix Dashboard</h2>
+    <p>
+      Insights into Netflix content by genre, rating, and release year.
+      <br>
+      <a class="project-link" href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">View Project</a>
+    </p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('menu');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
