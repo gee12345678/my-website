@@ -1,62 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vertical Navigation Menu</title>
-<style>
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  <title>Tableau Projects | Glenda Makamadze</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ===== Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body.is-preload {
+      overflow-x: hidden;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #171c35;
+      color: white;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #171c35;
-    color: white;
-  }
+    /* ===== Wrapper ===== */
+    #wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
 
-  /* Container for the menu */
-  .menu {
-    width: 200px;
-    background: #1e244a;
-    height: 100vh;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+    /* ===== Header ===== */
+    #header {
+      background: #1e244a;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #header .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: white;
+      text-decoration: none;
+    }
 
-  /* Each menu item */
-  .menu a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 2px;
-    padding: 12px 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    transition: background-color 0.3s ease;
-  }
+    /* ===== Menu toggle button ===== */
+    #header nav a#menuToggle {
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: block;
+      user-select: none;
+    }
 
-  .menu a:hover {
-    background-color: #3a4477;
-  }
-</style>
+    /* ===== Menu ===== */
+    #menu {
+      position: fixed;
+      top: 0;
+      right: -250px; /* hidden by default */
+      width: 250px;
+      height: 100%;
+      background: #1e244a;
+      padding-top: 4rem;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+    #menu.active {
+      right: 0;
+    }
+    #menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    #menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      transition: color 0.3s ease;
+    }
+    #menu ul li a:hover {
+      color: #72bcd4;
+    }
+
+    /* ===== Overlay to close menu ===== */
+    #menuOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+    #menuOverlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ===== Responsive ===== */
+    @media(min-width: 768px) {
+      /* Show menu horizontally and no toggle on desktop */
+      #menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        padding-top: 0;
+        display: flex !important;
+        justify-content: flex-end;
+        right: 0 !important;
+        transition: none;
+      }
+      #menu ul {
+        flex-direction: row;
+        gap: 2rem;
+        padding-left: 0;
+      }
+      #menuOverlay {
+        display: none;
+      }
+      #header nav a#menuToggle {
+        display: none;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="is-preload">
 
-<nav class="menu" role="navigation" aria-label="Primary Navigation">
-  <a href="#home">HOME</a>
-  <a href="#about">ABOUT</a>
-  <a href="#contact">CONTACT</a>
-  <a href="#python">PYTHON</a>
-  <a href="#tableau">TABLEAU</a>
-  <a href="#sql">SQL</a>
-  <a href="#excel">EXCEL</a>
-</nav>
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt style2">
+      <a href="index.html" class="logo"><strong>Glenda Makamadze</strong><span> Portfolio</span></a>
+      <nav>
+        <a id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">&#9776; MENU</a>
+        <div id="menu" role="navigation" aria-label="Primary Navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="tableau.html">Tableau</a></li>
+            <li><a href="sql.html">SQL</a></li>
+            <li><a href="excel.html">Excel</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <section id="banner" class="style2">
+      <div class="inner">
+        <header class="major"><h1>Tableau Projects</h1></header>
+        <div class="content">
+          <p>Visual dashboards that bring data to life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Section -->
+    <div id="main">
+      <section id="one" class="inner">
+        <h2>📊 My First Dashboard</h2>
+        <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
+        <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank" rel="noopener noreferrer">View on Tableau Public ↗</a></p>
+
+        <h2 style="margin-top: 3rem;">🎬 Netflix Dashboard</h2>
+        <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
+        <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank" rel="noopener noreferrer">View on Tableau Public ↗</a></p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="menuOverlay"></div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+      menu.classList.add('active');
+      menuOverlay.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      menu.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      if (menu.classList.contains('active')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+  </script>
 
 </body>
 </html>
