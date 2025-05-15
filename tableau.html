@@ -4,74 +4,72 @@
   <title>Tableau Projects | Glenda Makamadze</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { margin: 0; font-family: sans-serif; }
-    header { background: #1a1a1a; color: white; padding: 1em; display: flex; justify-content: space-between; align-items: center; }
-    header a.logo { color: white; text-decoration: none; font-size: 1.2em; font-weight: bold; }
-    nav a.menu-toggle { color: white; font-size: 1.2em; text-decoration: none; cursor: pointer; }
-    #menu { display: none; background: #111; position: fixed; top: 0; right: 0; height: 100%; width: 250px; padding: 2em 1em; z-index: 1000; transition: right 0.3s ease; }
-    #menu ul { list-style: none; padding: 0; }
-    #menu ul li { margin: 1em 0; }
-    #menu ul li a { color: white; text-decoration: none; font-size: 1.1em; }
-    .is-menu-visible #menu { display: block; }
-    .banner { padding: 4em 1em; background: #f4f4f4; text-align: center; }
-    .banner h1 { margin-bottom: 0.5em; }
-    .content-section { padding: 2em 1em; max-width: 800px; margin: auto; }
-    .project { margin-bottom: 2em; }
-    .project h2 { margin-bottom: 0.5em; }
-    .project a { color: #0077cc; text-decoration: none; }
-    .project a:hover { text-decoration: underline; }
-    @media (max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body>
+<body class="is-preload">
+  <div id="wrapper">
 
-  <!-- Header -->
-  <header>
-    <a href="index.html" class="logo">Glenda Makamadze <span>Portfolio</span></a>
-    <a class="menu-toggle" onclick="toggleMenu()">☰ Menu</a>
-  </header>
+    <!-- Header -->
+    <header id="header" class="alt style2">
+      <a href="index.html" class="logo"><strong>Glenda Makamadze</strong> <span>Portfolio</span></a>
+      <nav><a href="#menu">Menu</a></nav>
+    </header>
 
-  <!-- Menu -->
-  <nav id="menu">
-    <ul class="links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="python.html">Python</a></li>
-      <li><a href="tableau.html">Tableau</a></li>
-      <li><a href="excel.html">Excel</a></li>
-    </ul>
-  </nav>
+    <!-- Menu -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="tableau.html">Tableau</a></li>
+        <li><a href="excel.html">Excel</a></li>
+      </ul>
+    </nav>
 
-  <!-- Banner -->
-  <section class="banner">
-    <h1>Tableau Projects</h1>
-    <p>Visual dashboards that bring data to life.</p>
-  </section>
+    <!-- Banner -->
+    <section id="banner" class="style2">
+      <div class="inner">
+        <header class="major">
+          <h1>Tableau Projects</h1>
+        </header>
+        <div class="content">
+          <p>Visual dashboards that bring data to life.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Main Content -->
-  <section class="content-section">
-    <div class="project">
-      <h2>📊 My First Dashboard</h2>
-      <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
-      <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">View on Tableau Public ↗</a></p>
+    <!-- Main Section -->
+    <div id="main">
+      <section id="one" class="inner">
+        <header class="major">
+          <h2>My Tableau Dashboards</h2>
+        </header>
+
+        <ul>
+          <li>
+            <strong>📊 My First Dashboard</strong><br />
+            <a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">
+              View on Tableau Public ↗
+            </a>
+          </li>
+          <br />
+          <li>
+            <strong>🎬 Netflix Dashboard</strong><br />
+            <a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">
+              View on Tableau Public ↗
+            </a>
+          </li>
+        </ul>
+      </section>
     </div>
+  </div>
 
-    <div class="project">
-      <h2>🎬 Netflix Dashboard</h2>
-      <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
-      <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">View on Tableau Public ↗</a></p>
-    </div>
-  </section>
-
-  <!-- JavaScript for Menu Toggle -->
-  <script>
-    function toggleMenu() {
-      document.body.classList.toggle('is-menu-visible');
-    }
-  </script>
-
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
