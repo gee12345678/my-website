@@ -1,164 +1,153 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tableau Projects | Glenda Makamadze</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/main.css" />
   <style>
-    /* Custom styles to fix banner text visibility */
-    #banner.style2 {
-      background: #29294a;
-      color: white;
-      padding: 2rem;
-      border-radius: 6px;
-      text-align: center;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
     }
-    #banner.style2 h1,
-    #banner.style2 p {
+
+    /* Header styles */
+    #header {
+      background-color: #29294a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    #header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
       color: white;
     }
 
-    /* Hamburger menu styles */
-    nav#menuToggle {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
+    #menuToggle {
       width: 30px;
       height: 22px;
-      vertical-align: middle;
-    }
-    nav#menuToggle span {
-      display: block;
-      height: 4px;
-      background: white;
-      margin: 4px 0;
-      border-radius: 2px;
-      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
     }
 
-    /* Dropdown menu styles */
-    nav#menuDropdown {
-      display: none;
+    #menuToggle span {
+      height: 4px;
+      background-color: white;
+      border-radius: 2px;
+    }
+
+    #menuDropdown {
       position: absolute;
-      right: 0;
-      background: #23233f;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      border-radius: 4px;
-      margin-top: 0.5rem;
+      top: 60px;
+      right: 20px;
+      background-color: #23233f;
+      border-radius: 5px;
+      display: none;
+      flex-direction: column;
+      padding: 0;
+      list-style: none;
       min-width: 150px;
       z-index: 1000;
-      list-style: none;
-      padding: 0;
-    }
-    nav#menuDropdown li {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    nav#menuDropdown li:last-child {
-      border-bottom: none;
-    }
-    nav#menuDropdown li a {
-      display: block;
-      padding: 12px 20px;
-      color: white;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-    nav#menuDropdown li a:hover {
-      background: #343454;
     }
 
-    /* Position container to relative for dropdown absolute */
-    header#header nav {
-      position: relative;
+    #menuDropdown li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menuDropdown li:last-child {
+      border-bottom: none;
+    }
+
+    #menuDropdown a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    #menuDropdown a:hover {
+      background-color: #343454;
+    }
+
+    /* Banner */
+    #banner {
+      background-color: #29294a;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    /* Content */
+    #main {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: #29294a;
     }
   </style>
 </head>
-<body class="is-preload">
-  <div id="wrapper">
+<body>
 
-    <!-- Header -->
-    <header id="header" class="alt style2">
-      <a href="index.html" class="logo"><strong>Glenda Makamadze</strong><span> Portfolio</span></a>
-      <nav>
-        <!-- Hamburger toggle -->
-        <div id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <!-- Dropdown menu -->
-        <ul id="menuDropdown">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="python.html">Python</a></li>
-          <li><a href="tableau.html">Tableau</a></li>
-          <li><a href="excel.html">Excel</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Menu (hidden, replaced by dropdown) -->
-    <!--
-    <nav id="menu">
-      <ul class="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="python.html">Python</a></li>
-        <li><a href="tableau.html">Tableau</a></li>
-        <li><a href="excel.html">Excel</a></li>
-      </ul>
-    </nav>
-    -->
-
-    <!-- Banner -->
-    <section id="banner" class="style2">
-      <div class="inner">
-        <header class="major"><h1>Tableau Projects</h1></header>
-        <div class="content">
-          <p>Visual dashboards that bring data to life.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main Section -->
-    <div id="main">
-      <section id="one" class="inner">
-        <!-- First Dashboard -->
-        <h2>📊 My First Dashboard</h2>
-        <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
-        <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank" rel="noopener noreferrer">View on Tableau Public ↗</a></p>
-
-        <!-- Netflix Dashboard -->
-        <h2 style="margin-top: 3rem;">🎬 Netflix Dashboard</h2>
-        <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
-        <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank" rel="noopener noreferrer">View on Tableau Public ↗</a></p>
-      </section>
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="logo">Glenda Makamadze</a>
+    <div id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+    <ul id="menuDropdown">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="python.html">Python</a></li>
+      <li><a href="tableau.html">Tableau</a></li>
+      <li><a href="excel.html">Excel</a></li>
+    </ul>
+  </header>
+
+  <!-- Banner -->
+  <section id="banner">
+    <h1>Tableau Projects</h1>
+    <p>Visual dashboards that bring data to life.</p>
+  </section>
+
+  <!-- Main Content -->
+  <div id="main">
+    <h2>📊 My First Dashboard</h2>
+    <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
+    <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">View on Tableau Public ↗</a></p>
+
+    <h2 style="margin-top: 2rem;">🎬 Netflix Dashboard</h2>
+    <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
+    <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">View on Tableau Public ↗</a></p>
   </div>
 
   <script>
-    // Toggle dropdown menu on hamburger click
     const menuToggle = document.getElementById('menuToggle');
     const menuDropdown = document.getElementById('menuDropdown');
 
     menuToggle.addEventListener('click', () => {
-      if (menuDropdown.style.display === 'block') {
+      if (menuDropdown.style.display === 'flex') {
         menuDropdown.style.display = 'none';
       } else {
-        menuDropdown.style.display = 'block';
+        menuDropdown.style.display = 'flex';
       }
     });
 
-    // Close menu if clicking outside
-    document.addEventListener('click', (e) => {
-      if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
+    document.addEventListener('click', (event) => {
+      if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
         menuDropdown.style.display = 'none';
       }
     });
   </script>
+
 </body>
 </html>
