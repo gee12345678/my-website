@@ -1,27 +1,151 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-  <title>Tableau Projects | Glenda Makamadze</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <title>Tableau Projects | Glenda Makamadze</title>
+  <style>
+    /* Base Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    a {
+      color: #5c4ebd;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: #7a6bbd;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .menuToggle {
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+    }
+
+    .menuToggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin-left: 10px;
+      position: relative;
+    }
+
+    .menuToggle span::before,
+    .menuToggle span::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background: white;
+      left: 0;
+    }
+
+    .menuToggle span::before {
+      top: -8px;
+    }
+
+    .menuToggle span::after {
+      top: 8px;
+    }
+
+    #menu {
+      display: none;
+      background: #7a6bbd;
+      color: white;
+      padding: 1rem;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      z-index: 1000;
+    }
+
+    #menu.visible {
+      display: block;
+    }
+
+    #menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #menu ul li {
+      margin-bottom: 10px;
+    }
+
+    #banner {
+      background: linear-gradient(to right, #7a6bbd, #968cdb);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    #banner h1 {
+      margin: 0 0 1rem;
+    }
+
+    #main {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: #5c4ebd;
+    }
+
+    @media (min-width: 768px) {
+      #menu {
+        position: static;
+        display: flex !important;
+        background: transparent;
+        padding: 0;
+        width: auto;
+      }
+
+      #menu ul {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .menuToggle {
+        display: none;
+      }
+    }
+  </style>
 </head>
-<body class="is-preload">
-  <!-- Wrapper -->
-  <div id="wrapper">
-
-    <!-- Header -->
-    <header id="header" class="alt style2">
-      <a href="index.html" class="logo"><strong>Glenda Makamadze</strong> <span>Portfolio</span></a>
-      <nav>
-        <a href="#menu" class="menuToggle">Menu</a>
-      </nav>
-    </header>
-
-    <!-- Menu -->
+<body>
+  <header>
+    <a href="index.html" class="logo">Glenda Makamadze <span>Portfolio</span></a>
+    <div class="menuToggle">
+      MENU
+      <span></span>
+    </div>
     <nav id="menu">
-      <ul class="links">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="python.html">Python</a></li>
@@ -29,68 +153,35 @@
         <li><a href="excel.html">Excel</a></li>
       </ul>
     </nav>
+  </header>
 
-    <!-- Banner -->
-    <section id="banner" class="style2">
-      <div class="inner">
-        <header class="major">
-          <h1>Tableau Projects</h1>
-        </header>
-        <div class="content">
-          <p>Visual dashboards that bring data to life.</p>
-        </div>
-      </div>
+  <section id="banner">
+    <h1>Tableau Projects</h1>
+    <p>Visual dashboards that bring data to life.</p>
+  </section>
+
+  <div id="main">
+    <section id="projects">
+      <h2>📊 My First Dashboard</h2>
+      <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
+      <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1">View Project</a></p>
+
+      <h2 style="margin-top: 2rem;">🎬 Netflix Dashboard</h2>
+      <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can explore content by genre, release year, rating, and more.</p>
+      <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix">View Project</a></p>
     </section>
-
-    <!-- Main -->
-    <div id="main">
-      <section id="one" class="inner">
-        <header class="major">
-          <h2>My Tableau Dashboards</h2>
-        </header>
-
-        <ul>
-          <li>
-            <strong>📊 My First Dashboard</strong><br />
-            <a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">
-              View on Tableau Public ↗
-            </a>
-          </li>
-          <br />
-          <li>
-            <strong>🎬 Netflix Dashboard</strong><br />
-            <a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">
-              View on Tableau Public ↗
-            </a>
-          </li>
-        </ul>
-      </section>
-    </div>
-
   </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-
-  <!-- Add this if the menu toggle still doesn't work -->
   <script>
-    $(document).ready(function () {
-      $('.menuToggle').click(function (e) {
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menuToggle');
+      const menu = document.getElementById('menu');
+
+      menuToggle.addEventListener('click', function (e) {
         e.preventDefault();
-        $('#menu').toggleClass('visible');
+        menu.classList.toggle('visible');
       });
     });
   </script>
-
-  <style>
-    /* Optional: fallback CSS if JS fails */
-    #menu.visible {
-      display: block !important;
-    }
-  </style>
 </body>
 </html>
