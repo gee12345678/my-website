@@ -6,7 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <style>
-    /* Mobile menu fix */
+    /* === TEMP STYLE FIX FOR BANNER === */
+    #banner.style2 {
+      background: linear-gradient(to right, #5a2a82, #8a2387); /* purple gradient */
+      color: white;
+      padding: 6em 2em;
+      text-align: center;
+    }
+
+    #banner.style2 .inner {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    #banner.style2 h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    #banner.style2 p {
+      font-size: 1.3em;
+    }
+
+    /* Mobile menu toggle */
     #menuToggle {
       display: none;
     }
@@ -65,27 +87,6 @@
         display: block;
       }
     }
-
-    /* 🔧 Add banner background fix */
-    #banner.style2 {
-      background-image: url('images/banner.jpg'); /* 👈 Replace with your actual image path */
-      background-size: cover;
-      background-position: center;
-      padding: 6em 0;
-      color: white;
-      text-align: center;
-    }
-
-    #banner.style2 .inner {
-      background: rgba(0, 0, 0, 0.5); /* optional dark overlay */
-      padding: 2em;
-      border-radius: 1em;
-      display: inline-block;
-    }
-
-    #banner.style2 .major h1 {
-      font-size: 2.5em;
-    }
   </style>
 </head>
 <body class="is-preload">
@@ -110,7 +111,7 @@
       </nav>
     </header>
 
-    <!-- ✅ Fixed Banner -->
+    <!-- ✅ Banner with visible text -->
     <section id="banner" class="style2">
       <div class="inner">
         <header class="major"><h1>Tableau Projects</h1></header>
