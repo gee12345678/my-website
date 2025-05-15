@@ -1,153 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tableau Projects | Glenda Makamadze</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-    }
-
-    /* Header styles */
-    #header {
-      background-color: #29294a;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-    }
-
-    #header .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-    }
-
+    /* Optional: mobile hamburger enhancements */
     #menuToggle {
-      width: 30px;
-      height: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-
-    #menuToggle span {
-      height: 4px;
-      background-color: white;
-      border-radius: 2px;
-    }
-
-    #menuDropdown {
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: #23233f;
-      border-radius: 5px;
       display: none;
-      flex-direction: column;
-      padding: 0;
-      list-style: none;
-      min-width: 150px;
-      z-index: 1000;
     }
 
-    #menuDropdown li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+    @media screen and (max-width: 768px) {
+      #menuToggle {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 1001;
+        cursor: pointer;
+      }
 
-    #menuDropdown li:last-child {
-      border-bottom: none;
-    }
+      #menuToggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background-color: white;
+      }
 
-    #menuDropdown a {
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      display: block;
-    }
+      nav#menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #1e1e2f;
+        width: 200px;
+        z-index: 1000;
+        border-radius: 8px;
+      }
 
-    #menuDropdown a:hover {
-      background-color: #343454;
-    }
+      nav#menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-    /* Banner */
-    #banner {
-      background-color: #29294a;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
+      nav#menu ul li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-    /* Content */
-    #main {
-      padding: 2rem;
-    }
+      nav#menu ul li a {
+        display: block;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+      }
 
-    h2 {
-      color: #29294a;
+      nav#menu ul li a:hover {
+        background: #2e2e40;
+      }
+
+      nav#menu.active {
+        display: block;
+      }
     }
   </style>
 </head>
-<body>
+<body class="is-preload">
+  <div id="wrapper">
 
-  <!-- Header -->
-  <header id="header">
-    <a href="index.html" class="logo">Glenda Makamadze</a>
-    <div id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
+    <!-- Header -->
+    <header id="header" class="alt style2">
+      <a href="index.html" class="logo"><strong>Glenda Makamadze</strong><span> Portfolio</span></a>
+      <div id="menuToggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="menu">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="python.html">Python</a></li>
+          <li><a href="tableau.html">Tableau</a></li>
+          <li><a href="excel.html">Excel</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <section id="banner" class="style2">
+      <div class="inner">
+        <header class="major"><h1>Tableau Projects</h1></header>
+        <div class="content">
+          <p>Visual dashboards that bring data to life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Section -->
+    <div id="main">
+      <section id="one" class="inner">
+        <!-- First Dashboard -->
+        <h2>📊 My First Dashboard</h2>
+        <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
+        <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">View on Tableau Public ↗</a></p>
+
+        <!-- Netflix Dashboard -->
+        <h2 style="margin-top: 3rem;">🎬 Netflix Dashboard</h2>
+        <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
+        <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">View on Tableau Public ↗</a></p>
+      </section>
     </div>
-    <ul id="menuDropdown">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="python.html">Python</a></li>
-      <li><a href="tableau.html">Tableau</a></li>
-      <li><a href="excel.html">Excel</a></li>
-    </ul>
-  </header>
-
-  <!-- Banner -->
-  <section id="banner">
-    <h1>Tableau Projects</h1>
-    <p>Visual dashboards that bring data to life.</p>
-  </section>
-
-  <!-- Main Content -->
-  <div id="main">
-    <h2>📊 My First Dashboard</h2>
-    <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
-    <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">View on Tableau Public ↗</a></p>
-
-    <h2 style="margin-top: 2rem;">🎬 Netflix Dashboard</h2>
-    <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
-    <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">View on Tableau Public ↗</a></p>
   </div>
 
+  <!-- JavaScript for toggling the menu on mobile -->
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const menuDropdown = document.getElementById('menuDropdown');
-
-    menuToggle.addEventListener('click', () => {
-      if (menuDropdown.style.display === 'flex') {
-        menuDropdown.style.display = 'none';
-      } else {
-        menuDropdown.style.display = 'flex';
-      }
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
-        menuDropdown.style.display = 'none';
-      }
-    });
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
   </script>
-
 </body>
 </html>
