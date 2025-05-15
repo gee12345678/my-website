@@ -4,23 +4,44 @@
   <title>Tableau Projects | Glenda Makamadze</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/main.css" />
   <style>
-    /* Hamburger toggle */
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e2f;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    #wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    header#header {
+      background: #2a2a4a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header#header .logo {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: white;
+      text-decoration: none;
+    }
     #menuToggle {
       font-size: 1.5rem;
       cursor: pointer;
       color: white;
-      display: inline-block;
       user-select: none;
     }
-
-    /* Menu initially hidden off-canvas */
+    /* Menu */
     #menu {
       position: fixed;
       top: 0;
       right: 0;
-      height: 100%;
+      height: 100vh;
       width: 250px;
       background: #23233f;
       padding-top: 3rem;
@@ -29,34 +50,26 @@
       z-index: 10000;
       overflow-y: auto;
     }
-
-    /* Show menu */
     #menu.active {
       transform: translateX(0);
     }
-
-    /* Close button inside menu */
     #menuClose {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      font-size: 1.8rem;
+      font-size: 2rem;
       cursor: pointer;
       color: white;
       user-select: none;
     }
-
-    /* Menu links styling */
     #menu ul.links {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-
     #menu ul.links li {
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-
     #menu ul.links li a {
       display: block;
       padding: 1rem 2rem;
@@ -66,31 +79,45 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-
     #menu ul.links li a:hover {
       background: #343454;
     }
-
-    /* Make sure main content is visible */
-    #main {
+    section#banner {
+      background: #29294a;
       padding: 2rem;
-      position: relative;
-      z-index: 1;
-      background: transparent;
+      margin-top: 1rem;
+      border-radius: 6px;
+      text-align: center;
     }
-
-    /* Header nav styling (optional, adjust if needed) */
-    header#header nav {
-      display: inline-block;
+    section#banner h1 {
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+    }
+    #main {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #2a2a4a;
+      border-radius: 6px;
+    }
+    #main h2 {
+      margin-top: 0;
+      letter-spacing: 0.1em;
+    }
+    #main a {
+      color: #8ab4f8;
+      text-decoration: none;
+    }
+    #main a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
-<body class="is-preload">
+<body>
   <div id="wrapper">
 
     <!-- Header -->
-    <header id="header" class="alt style2">
-      <a href="index.html" class="logo"><strong>Glenda Makamadze</strong><span> Portfolio</span></a>
+    <header id="header">
+      <a href="index.html" class="logo">Glenda Makamadze <span style="font-weight:normal;">Portfolio</span></a>
       <nav>
         <span id="menuToggle">&#9776; Menu</span>
       </nav>
@@ -109,30 +136,25 @@
     </nav>
 
     <!-- Banner -->
-    <section id="banner" class="style2">
-      <div class="inner">
-        <header class="major"><h1>Tableau Projects</h1></header>
-        <div class="content">
-          <p>Visual dashboards that bring data to life.</p>
-        </div>
+    <section id="banner">
+      <header class="major"><h1>Tableau Projects</h1></header>
+      <div class="content">
+        <p>Visual dashboards that bring data to life.</p>
       </div>
     </section>
 
     <!-- Main Section -->
     <div id="main">
-      <section id="one" class="inner">
-        <!-- First Dashboard -->
+      <section id="one">
         <h2>📊 My First Dashboard</h2>
         <p>This was my first Tableau dashboard. It features simple visuals to showcase basic data insights.</p>
         <p><a href="https://public.tableau.com/views/WorldPopulationDashboard_17156686968530/Dashboard1" target="_blank">View on Tableau Public ↗</a></p>
 
-        <!-- Netflix Dashboard -->
         <h2 style="margin-top: 3rem;">🎬 Netflix Dashboard</h2>
         <p>This dashboard offers insights into Netflix shows and movies using bar charts and pie charts. Users can interact with filters to explore content by genre, release year, rating, and more.</p>
         <p><a href="https://public.tableau.com/views/Netflix_17472326536060/Netflix" target="_blank">View on Tableau Public ↗</a></p>
       </section>
     </div>
-
   </div>
 
   <script>
@@ -152,7 +174,7 @@
       menu.classList.remove('active');
     }
 
-    // Close menu if clicking outside menu & toggle
+    // Optional: close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
         menu.classList.remove('active');
