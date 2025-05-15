@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* Basic reset and body style */
+    /* Original style + added dropdown menu styles */
+
     body {
       font-family: "Arial", sans-serif;
       background: #1e1e2f;
@@ -19,7 +20,7 @@
       padding: 1rem;
     }
 
-    /* Header styles */
+    /* Header */
     header#header {
       background: #2a2a4a;
       padding: 1rem 2rem;
@@ -36,13 +37,21 @@
     header#header nav {
       position: relative;
     }
-    header#header nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 2px;
+    header#header nav a#menuToggle {
       cursor: pointer;
       user-select: none;
+      width: 30px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* Hamburger lines */
+    header#header nav a#menuToggle span {
+      display: block;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
     }
 
     /* Dropdown menu */
@@ -114,7 +123,11 @@
     <header id="header">
       <a href="index.html" class="logo">Glenda Makamadze <span style="font-weight:normal;">Portfolio</span></a>
       <nav>
-        <a id="menuToggle">Menu ▼</a>
+        <a id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
         <div id="menuDropdown">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
@@ -161,7 +174,7 @@
       }
     });
 
-    // Optional: close menu if clicking outside of it
+    // Close menu if clicking outside
     document.addEventListener('click', (e) => {
       if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
         menuDropdown.style.display = 'none';
