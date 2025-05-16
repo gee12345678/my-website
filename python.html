@@ -1,26 +1,27 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
   <title>Python Projects | Glenda Makamadze</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
-
-  <!-- Wrapper -->
   <div id="wrapper">
 
     <!-- Header -->
     <header id="header" class="alt style2">
-      <a href="index.html" class="logo"><strong>Glenda Makamadze</strong><span> Portfolio</span></a>
-      <nav><a href="#menu">Menu</a></nav>
+      <a href="/" class="logo"><strong>Glenda Makamadze</strong><span> Portfolio</span></a>
+      <nav>
+        <a href="#" id="menuToggle">MENU &#9776;</a>
+      </nav>
     </header>
 
     <!-- Menu -->
     <nav id="menu">
       <ul class="links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="python.html">Python</a></li>
         <li><a href="tableau.html">Tableau</a></li>
@@ -31,30 +32,63 @@
     <!-- Banner -->
     <section id="banner" class="style2">
       <div class="inner">
-        <header class="major">
-          <h1>Python Projects</h1>
-        </header>
+        <header class="major"><h1>Python Projects</h1></header>
         <div class="content">
           <p>Explore how I analyze and visualize data using Python.</p>
         </div>
       </div>
     </section>
 
-    <!-- Main -->
+    <!-- Main Section -->
     <div id="main">
       <section id="one" class="inner">
-        <header class="major">
-          <h2>Superstore Analysis</h2>
-        </header>
-        <p>
-          <a href="https://github.com/gee12345678/data-science-analysis.github.io/blob/main/Superstore_.ipynb" target="_blank">
-            Click here to view the project on GitHub
-          </a>
-        </p>
+        <h2>📊 Superstore Analysis</h2>
+        <p>This project explores retail data to discover insights using Python libraries like pandas, matplotlib, and seaborn.</p>
+        <p><a href="https://github.com/gee12345678/data-science-analysis.github.io/blob/main/Superstore_.ipynb" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></p>
       </section>
     </div>
-
   </div>
 
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      menu.classList.toggle('active');
+    });
+
+    const parentsWithSubmenu = document.querySelectorAll('#menu ul li > a');
+
+    parentsWithSubmenu.forEach(link => {
+      const nextEl = link.nextElementSibling;
+      if (nextEl && nextEl.tagName === 'UL') {
+        link.addEventListener('click', function(e) {
+          if (window.innerWidth < 769) {
+            e.preventDefault();
+            const parentLi = link.parentElement;
+            parentLi.classList.toggle('open');
+          }
+        });
+      }
+    });
+
+    const menuLinks = menu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 769) {
+          menu.classList.remove('active');
+          document.querySelectorAll('#menu li.open').forEach(li => li.classList.remove('open'));
+        }
+      });
+    });
+  </script>
 </body>
 </html>
