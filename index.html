@@ -9,21 +9,24 @@
   <style>
     /* Custom styles to make boxes the same size and 2 per row */
     #main .tiles article {
-      width: 45%;
-      margin: 2.5%;
+      width: 50%;
+      margin: 0;
       height: 400px;
       overflow: hidden;
       position: relative;
+      box-sizing: border-box;
     }
     
     #main .tiles {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
     }
     
     #main .tiles article .image {
-      height: 60%;
+      height: 70%;
       overflow: hidden;
     }
     
@@ -48,6 +51,16 @@
       color: #333;
       position: relative;
       z-index: 10;
+      margin-top: 20px; /* Push text down below the face */
+    }
+    
+    /* Adjust text position for all articles */
+    #main .tiles article header.major {
+      bottom: 0;
+      position: absolute;
+      padding: 1em;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
     }
   </style>
 </head>
