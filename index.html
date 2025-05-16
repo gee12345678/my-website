@@ -6,6 +6,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    .tiles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .tiles article {
+      width: calc(50% - 2rem); /* 2 per row with gap */
+      box-sizing: border-box;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .tiles article:hover {
+      transform: translateY(-5px);
+    }
+
+    .tiles article img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* Remove hover overlay effect for first tile */
+    .tiles article:first-child .image::before {
+      display: none !important;
+      background: none !important;
+    }
+
+    .tiles h3 {
+      margin: 10px 0 5px;
+      font-size: 1.3em;
+    }
+
+    .tiles p {
+      margin: 0 0 15px;
+      color: #555;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body class="is-preload">
 
@@ -28,7 +76,6 @@
         <li><a href="#footer">Contact</a></li>
         <li><a href="python.html">Python</a></li>
         <li><a href="tableau.html">Tableau</a></li>
-      
         <li><a href="excel.html">Excel</a></li>
       </ul>
     </nav>
@@ -51,69 +98,19 @@
     <!-- Main -->
     <div id="main">
       <section id="one" class="tiles">
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Portfolio Index</title>
-  <style>
-    .profile-article {
-      width: 100%;
-      max-width: 400px;
-      margin: auto;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
 
-    .profile-article img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      display: block;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+        <article>
+          <span class="image">
+            <a href="about.html">
+              <img src="images/picp.jpg" alt="Glenda Makamadze" />
+            </a>
+          </span>
+          <header class="major">
+            <h3><a href="about.html" class="link">Glenda Makamadze</a></h3>
+            <p>An Aspiring Data Analyst.</p>
+          </header>
+        </article>
 
-    .profile-text {
-      margin-top: 10px;
-    }
-
-    .profile-text h3 {
-      margin: 5px 0;
-      font-size: 1.5em;
-    }
-
-    .profile-text p {
-      margin: 0;
-      color: #555;
-      font-style: italic;
-    }
-  </style>
-</head>
-<body>
-   <article>
-  <span class="image">
-    <a href="about.html">
-      <img src="images/picp.jpg" alt="Glenda Makamadze" />
-    </a>
-  </span>
-   </br>
-       </br>
-       </br>
-       </br>
-       </br>
-       </br>
-       </br>
-       </br>
-       </br>
-       </br>
-       </br>
-       </br>
-       </br>
-  <header class="major">
-    <h3><a href="about.html" class="link">Glenda Makamadze</a></h3>
-    <p>An Aspiring Data Analyst.</p>
-  </header>
-</article>
         <article>
           <span class="image"><img src="images/pic01.jpg" alt="Python" /></span>
           <header class="major">
@@ -129,8 +126,6 @@
             <p>Interactive dashboards highlighting SA crime data insights.</p>
           </header>
         </article>
-
-       
 
         <article>
           <span class="image"><img src="images/pic04.jpg" alt="Excel" /></span>
