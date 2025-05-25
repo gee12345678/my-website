@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   
   <style>
+    /* Set dark background */
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
     /* Avatar styling */
     .profile-img {
       max-width: 180px;
@@ -16,7 +25,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      border: 3px solid #555;
+      border: 3px solid #fff;
     }
     
     /* Center align the avatar container */
@@ -33,14 +42,14 @@
       margin-left: auto;
       margin-right: auto;
       padding: 0 1em;
-      color: #333;
+      color: white;
     }
 
     #main section.inner h2 {
       font-size: 2.4rem;
       margin-bottom: 0.5em;
       text-align: center;
-      color: #222;
+      color: white;
     }
 
     #main section.inner p.intro {
@@ -48,15 +57,74 @@
       font-weight: 500;
       margin-bottom: 1.5em;
       text-align: center;
-      color: #444;
+      color: white;
     }
     
     /* Increase spacing between sections */
     #main section.inner h3 {
       margin-top: 2.5em;
-      color: #222;
+      color: white;
       font-size: 1.5rem;
     }
+
+    a {
+      color: #66ccff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header style adjustments */
+    #header {
+      background-color: #1e1e1e;
+      border-bottom: 1px solid #333;
+    }
+
+    #header .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 1rem;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    /* Menu background dark */
+    #menu {
+      background-color: #1e1e1e;
+    }
+
+    #menu ul.links li a {
+      color: white;
+      padding: 0.8rem 1.2rem;
+      display: block;
+      text-decoration: none;
+    }
+
+    #menu ul.links li a:hover {
+      background-color: #333;
+    }
+
+    /* Banner styling */
+    #banner.style2 {
+      background-color: #222;
+      padding: 3rem 0;
+      text-align: center;
+      color: white;
+    }
+
+    #banner.style2 header.major h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    #banner.style2 .content p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
   </style>
 </head>
 <body class="is-preload">
@@ -94,6 +162,7 @@
       <section class="inner">
 
         <div class="avatar-container">
+          <!-- Make sure this path is correct or use a URL -->
           <img src="assets/images/profile.jpg" alt="Glenda Makamadze" class="profile-img" />
         </div>
 
@@ -106,7 +175,7 @@
           I specialize in Python, SQL, Tableau, Excel, and Power BI — tools I use daily to analyze datasets, visualize trends, and build predictive models. Beyond the numbers, I thrive on clear communication and collaboration, bridging the gap between technical analysis and business strategy. Whether it’s creating dashboards, cleaning data, or exploring new technologies like IoT and cybersecurity, I’m eager to learn and contribute.
         </p>
 
-        <hr>
+        <hr style="border-color: #444; margin: 3rem 0;" />
 
         <h3>📜 Certifications & Courses</h3> 
         <ul>
