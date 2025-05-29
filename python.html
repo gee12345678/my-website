@@ -75,82 +75,64 @@
     </a>
   </p>
 </section>
-   <section style="font-family: Arial, sans-serif; padding: 20px; max-width: 900px; margin: auto;">
+   <h3>🏠 House Price Prediction (California Housing)</h3>
+  <p>This project focuses on predicting housing prices using the California Housing dataset. I used machine learning models to estimate house values based on income, population, location, and other housing-related features.</p>
+
+  <strong>Project Goals:</strong>
+  <ul>
+    <li>Predict median house values using features like income, latitude, and rooms per household</li>
+    <li>Compare the performance of Linear Regression and Decision Tree models</li>
+  </ul>
+
+  <strong>Skills and Tools Used:</strong>
+  <ul>
+    <li>Pandas & NumPy: data preprocessing and exploration</li>
+    <li>Matplotlib & Seaborn: visualizations (heatmaps, scatter plots)</li>
+    <li>Sklearn: model training and evaluation (Linear Regression, Decision Tree)</li>
+  </ul>
+
+  <strong>What I Learned:</strong>
+  <ul>
+    <li>How location (latitude & longitude) significantly impacts housing prices</li>
+    <li>Decision Trees handle complex, non-linear data better than Linear Regression</li>
+    <li>Feature correlation helps reduce noise and improve model performance</li>
+  </ul>
+
+  <strong>Project Takeaway:</strong> This project gave me hands-on experience with supervised learning and taught me how to evaluate model performance using metrics like R² and MAE.
+
+  <p>📎 <a href="https://github.com/gee12345678/my-website/blob/main/housing%20prediction.ipynb" target="_blank">View Full Project on GitHub</a></p>
+
+  <hr>
+
+  <!-- Project 2 -->
+  <h3>🛍️ Customer Segmentation (Mall Customers Dataset)</h3>
+  <p>This project aimed to group mall customers into distinct clusters based on income and spending score using K-Means clustering. It helped simulate how businesses can personalize marketing strategies.</p>
+
+  <strong>Project Goals:</strong>
+  <ul>
+    <li>Segment customers into groups for targeted marketing</li>
+    <li>Identify high-value, low-value, and average customer types</li>
+  </ul>
+
+  <strong>Skills and Tools Used:</strong>
+  <ul>
+    <li>Pandas: data handling and analysis</li>
+    <li>Seaborn & Matplotlib: clustering visuals, histograms, and gender distribution</li>
+    <li>Sklearn: KMeans clustering, Elbow method for optimal k</li>
+  </ul>
+
+  <strong>What I Learned:</strong>
+  <ul>
+    <li>How to use clustering to understand consumer behavior</li>
+    <li>Elbow method to determine optimal clusters</li>
+    <li>Customer segments are not always based on income — some low earners are high spenders</li>
+  </ul>
+
+  <strong>Project Takeaway:</strong> This was a great introduction to unsupervised learning. It showed me how data patterns can be grouped and used to inform real business strategies.
+
+  <p>📎 <a href="https://github.com/gee12345678/my-website/blob/main/Customer%20mall%20dataset.ipynb" target="_blank">View Full Project on GitHub</a></p>
+
   
-
-  <article style="margin-bottom: 40px;">
-    <h3 style="color: #34495e;">🏠 House Price Prediction (California Housing Dataset)</h3>
-    <p><strong>Objective:</strong> Predict housing prices using various features from the California housing dataset for a fictional real estate company, UrbanNest Realty.</p>
-
-    <h4>🔍 What I Did:</h4>
-    <ul>
-      <li>Loaded and explored the California housing dataset from sklearn.</li>
-      <li>Visualized distributions, correlations, and relationships between features using scatter plots and heatmaps.</li>
-      <li>Preprocessed data, normalized features, and built two models: Linear Regression and Decision Tree Regressor.</li>
-      <li>Evaluated models using R² Score and Mean Absolute Error (MAE).</li>
-    </ul>
-
-    <h4>📈 Key Features:</h4>
-    <ul>
-      <li><strong>Median Income</strong>: Strongly correlated with house value.</li>
-      <li><strong>Location (Latitude, Longitude)</strong>: Helped visualize price trends across California.</li>
-      <li><strong>Rooms and Population per Household</strong>: Helped uncover local density and living space availability.</li>
-    </ul>
-
-    <h4>📊 Results:</h4>
-    <ul>
-      <li><strong>Linear Regression</strong>: MAE ≈ $50,000, R² ≈ 0.61</li>
-      <li><strong>Decision Tree</strong>: MAE ≈ $35,000, R² ≈ 0.75</li>
-    </ul>
-
-    <h4>💡 Key Insights:</h4>
-    <ul>
-      <li>Decision Trees perform better with non-linear data than simple linear regression.</li>
-      <li>Median income is a reliable indicator of house prices in California.</li>
-      <li>Location plays a crucial role in housing value and should not be ignored.</li>
-    </ul>
-
-    <p><a href="https://github.com/gee12345678/my-website/blob/main/housing%20prediction.ipynb" target="_blank" style="color: #3498db;">🔗 View Notebook on GitHub</a></p>
-  </article>
-
-  <article>
-    <h3 style="color: #34495e;">🛍️ Customer Segmentation (Mall Customers Dataset)</h3>
-    <p><strong>Objective:</strong> Segment customers into groups based on their spending score and income to help ShopEase create targeted marketing strategies.</p>
-
-    <h4>🔍 What I Did:</h4>
-    <ul>
-      <li>Loaded and explored the Mall Customers dataset including Age, Gender, Annual Income, and Spending Score.</li>
-      <li>Cleaned the data (no missing values), visualized patterns using Seaborn and Matplotlib.</li>
-      <li>Applied <strong>k-Means clustering</strong> using Annual Income and Spending Score.</li>
-      <li>Determined the optimal number of clusters (k=5) using the Elbow Method.</li>
-    </ul>
-
-    <h4>📊 Clusters and Strategy:</h4>
-    <ul>
-      <li><strong>Cluster 1:</strong> High income, high spenders → Premium promotion</li>
-      <li><strong>Cluster 2:</strong> Low income, low spenders → Value offers</li>
-      <li><strong>Cluster 3:</strong> High income, low spenders → Incentives or loyalty</li>
-      <li><strong>Cluster 4:</strong> Low income, high spenders → Cautious targeting</li>
-      <li><strong>Cluster 5:</strong> Average income and spenders → General campaigns</li>
-    </ul>
-
-    <h4>📈 Visuals:</h4>
-    <ul>
-      <li>Scatter plot of clusters with centroids.</li>
-      <li>Histogram distributions by gender and spending score.</li>
-      <li>Elbow plot to choose optimal k value.</li>
-    </ul>
-
-    <h4>💡 Key Insights:</h4>
-    <ul>
-      <li>Spending habits aren't directly proportional to income — segmentation reveals hidden groups.</li>
-      <li>Cluster analysis helps in personalizing marketing for different consumer types.</li>
-      <li>Gender does not significantly impact spending score distribution in this dataset.</li>
-    </ul>
-
-    <p><a href="https://github.com/gee12345678/my-website/blob/main/Customer%20mall%20dataset.ipynb" target="_blank" style="color: #3498db;">🔗 View Notebook on GitHub</a></p>
-  </article>
-</section>
 
 
    
